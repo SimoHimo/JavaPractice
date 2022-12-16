@@ -7,11 +7,17 @@ public class Main {
 
 
         System.out.print("Enter Limit: ");
+
+        //takes an integer as input
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
 
-        StringBuilder total = new StringBuilder(String.format("\nPrime numbers in %d are: ", input));
 
+
+        StringBuilder total = new StringBuilder(String.format("\nPrime numbers from 0 to %d are: \n\t", input));
+
+
+        //for each number till limit, checks if it's prime number or not by using isPrime() method and adds prime number to total.
         for (int i=2;i<input;i++){
 
             if(isPrime(i)){
@@ -19,47 +25,23 @@ public class Main {
             }
 
         }
+
+        //deletes the last comma and prints the numbers.
+        total.deleteCharAt(total.length() - 2);
+
         System.out.println(total);
     }
 
 
+    // Function to see if the number is a prime number
+    //takes one number at a time
+    //returns true if prime or false if not
     public static boolean isPrime(int x){
         for (int i=2;i<x;i++){
             if(x%i==0){
                 return false;
             }
-
-
         }
-
         return true;
     }
 }
-
-
-//Perfect for one number;
-
-
-
-//        Date now = new Date();
-//        System.out.println(now);
-//
-//        String[][] floors = new String[4][3];
-//        floors[0][0]= "Reception";
-//        floors[0][1]= "Reception";
-//        floors[0][2]= "Reception";
-//        floors[1][0] = "Gaye Holud";
-//        floors[1][1] = "Kids Zone";
-//        floors[1][2] = "Dance floor";
-//        floors[2][0] = "Wrestling";
-//        floors[2][1] = "Racing";
-//        floors[2][2] = "Shooting ";
-//        floors[3][0] = "Smoking ";
-//        floors[3][1] = "Booze ";
-//        floors[3][2] = "You Know What ";
-//
-//        String floors_in_string = Arrays.deepToString(floors);
-//
-//
-//
-//        System.out.println(floors_in_string);
